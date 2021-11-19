@@ -39,27 +39,6 @@ namespace WebMvc.Models
 
         [JsonProperty("PRGPLACE")]
         public string PrgPlace { get; set; }
-
-        [JsonProperty("PRGAG")]
-        public string PrgAg { get; set; }
-
-        [JsonProperty("PRGCONT")]
-        public string PrgCont { get; set; }
-
-        [JsonProperty("PRGTICKET")]
-        public string PrgTicket { get; set; }
-
-        [JsonProperty("TICKETSYSURL")]
-        public string TicketSysUrl { get; set; }
-
-        [JsonProperty("ITEMDESC")]
-        public string ItemDesc { get; set; }
-
-        [JsonProperty("IMAGE1")]
-        public string Image1 { get; set; }
-
-        [JsonProperty("IMAGE2")]
-        public string Image2 { get; set; }
     }
 }
 
