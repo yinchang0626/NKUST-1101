@@ -1,0 +1,33 @@
+﻿@model List<Activity>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h1>Activities List</h1>
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>@item.PrgName</li>
+    }
+</ul>
+<table>
+    <thead>
+        <tr>
+            <th>PrgName</th>
+            <th>PrgPlace</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.PrgName</td>
+                <td>@item.PrgPlace</td>
+            </tr>
+        }
+
+    </tbody>
+    <tfoot></tfoot>
+</table>
