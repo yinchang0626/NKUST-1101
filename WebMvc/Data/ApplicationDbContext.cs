@@ -10,6 +10,9 @@ namespace WebMvc.Data
     public class ApplicationDbContext : IdentityDbContext
     {
         public DbSet<Activity> Activities { get; set; }
+
+        public DbSet<MenuItem> MenuItems { get; set; }
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {

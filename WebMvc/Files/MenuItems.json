@@ -1,0 +1,123 @@
+[
+  {
+    "DisplayName": "Dashboard",
+    "IsActive": true,
+    "Url": "",
+    "Icon": "fa-tachometer-alt",
+    "Children": [
+      {
+        "DisplayName": "Dashboard v1",
+        "IsActive": true,
+        "Url": "../../index.html",
+        "Icon": "fa-circle"
+      },
+      {
+        "DisplayName": "Dashboard v2",
+        "IsActive": true,
+        "Url": "../../index2.html",
+        "Icon": "fa-circle"
+      },
+      {
+        "DisplayName": "Dashboard v3",
+        "IsActive": true,
+        "Url": "../../index3.html",
+        "Icon": "fa-circle"
+      }
+    ]
+  },
+  {
+    "DisplayName": "Widgets",
+    "IsActive": true,
+    "Url": "../../widgets.html",
+    "Icon": "fa-th"
+  },
+  {
+    "DisplayName": "Layout Options",
+    "IsActive": true,
+    "Url": "",
+    "Icon": "fa-copy",
+    "Children": [
+      {
+        "DisplayName": "Top Navigation",
+        "IsActive": true,
+        "Url": "../layout/top-nav.html",
+        "Icon": "fa-circle"
+      },
+      {
+        "DisplayName": "Top Navigation + Sidebar",
+        "IsActive": true,
+        "Url": "../layout/top-nav-sidebar.html",
+        "Icon": "fa-circle"
+      },
+      {
+        "DisplayName": "Boxed",
+        "IsActive": true,
+        "Url": "../layout/boxed.html",
+        "Icon": "fa-circle"
+      },
+      {
+        "DisplayName": "Fixed Sidebar",
+        "IsActive": true,
+        "Url": "../layout/fixed-sidebar.html",
+        "Icon": "fa-circle"
+      },
+      {
+        "DisplayName": "Fixed Sidebar + Custom Area",
+        "IsActive": true,
+        "Url": "../layout/fixed-sidebar-custom.html",
+        "Icon": "fa-circle"
+      },
+      {
+        "DisplayName": "Fixed Navbar",
+        "IsActive": true,
+        "Url": "../layout/fixed-topnav.html",
+        "Icon": "fa-circle"
+      },
+      {
+        "DisplayName": "Fixed Footer",
+        "IsActive": true,
+        "Url": "../layout/fixed-footer.html",
+        "Icon": "fa-circle"
+      },
+      {
+        "DisplayName": "Collapsed Sidebar",
+        "IsActive": true,
+        "Url": "../layout/collapsed-sidebar.html",
+        "Icon": "fa-circle"
+      }
+    ]
+  },
+  {
+    "DisplayName": "Charts",
+    "IsActive": true,
+    "Url": "",
+    "Icon": "fa-chart-pie",
+    "Children": [
+      {
+        "DisplayName": "ChartJS",
+        "IsActive": true,
+        "Url": "../charts/chartjs.html",
+        "Icon": "fa-circle"
+      },
+      {
+        "DisplayName": "Flot",
+        "IsActive": true,
+        "Url": "../charts/flot.html",
+        "Icon": "fa-circle"
+      },
+      {
+        "DisplayName": "Inline",
+        "IsActive": true,
+        "Url": "../charts/inline.html",
+        "Icon": "fa-circle"
+      },
+      {
+        "DisplayName": "uPlot",
+        "IsActive": true,
+        "Url": "../charts/uplot.html",
+        "Icon": "fa-circle"
+      }
+    ]
+  }
+
+]
