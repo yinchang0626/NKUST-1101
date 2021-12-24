@@ -6,10 +6,24 @@ using WebMvc.Models;
 
 namespace WebMvc.Services
 {
-    public class MenuItemServices
+    public class MenuItemServices : IMenuItemServices
     {
+        protected WebMvc.Data.ApplicationDbContext ApplicationDbContext { get; set; }
+        public MenuItemServices(
+            WebMvc.Data.ApplicationDbContext applicationDbContext)
+        {
+            ApplicationDbContext = applicationDbContext;
+        }
+        public virtual List<MenuItem> ListTree()
+        {
+            var menus = ApplicationDbContext.MenuItems.ToList();
 
-        public void ImportDataFromFile(WebMvc.Data.ApplicationDbContext applicationDbContext)
+            var tree = menus.Where(x => x.Parent == null).ToList();
+
+            return tree;
+        }
+
+        public virtual void ImportDataFromFile()
         {
             var filePath = Utils.FilePath.GetFullPath("MenuItems.json");
 
@@ -26,13 +40,13 @@ namespace WebMvc.Services
 
             TraverseTree(null, menus);
 
-            applicationDbContext.MenuItems.AddRange(menus);
-            applicationDbContext.SaveChanges();
+            ApplicationDbContext.MenuItems.AddRange(menus);
+            ApplicationDbContext.SaveChanges();
         }
 
         public static IEnumerable<MenuItem> Flatten(IEnumerable<MenuItem> item)
         {
-            return item.SelectMany(c => Flatten(c.Children??new List<MenuItem>())).Concat(item);
+            return item.SelectMany(c => Flatten(c.Children ?? new List<MenuItem>())).Concat(item);
         }
 
         public void TraverseTree(MenuItem parent, List<MenuItem> children)
@@ -54,12 +68,7 @@ namespace WebMvc.Services
             }
         }
 
-        public void SetCode()
-        {
-
-        }
-
-        public List<MenuItem> Build(List<MenuItem> menus)
+        public List<MenuItem> BuildToTree(List<MenuItem> menus)
         {
             List<MenuItem> roots = new List<MenuItem>();
 
@@ -68,10 +77,13 @@ namespace WebMvc.Services
                   if (!x.Code.Contains("."))
                       roots.Add(x);
 
+                  var parentCode = x.Code.Substring(0, x.Code.LastIndexOf('.'));
+
+
               });
-            return null;
+            return roots;
         }
 
-        
+
     }
 }

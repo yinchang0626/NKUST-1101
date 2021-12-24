@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebMvc.Data;
+using WebMvc.Services;
 
 namespace WebMvc
 {
@@ -30,11 +31,22 @@ namespace WebMvc
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddDatabaseDeveloperPageExceptionFilter();
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
             services.AddControllersWithViews();
+
+
+
+            services.AddTransient<MenuItemServices>();
+
+            services.AddTransient<IMenuItemServices>((s) =>
+            {
+                return s.GetService<MenuItemServices>();
+            });
 
         }
 
